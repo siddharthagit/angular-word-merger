@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { environment } from '../../../environments/environment';
 
@@ -8,7 +8,7 @@ export class CommonHttpService {
     public baseURL = environment.apiBaseURL;  //  BASE URL to web api
     private isServerAvailable = false;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: Http) {
 
     }
 

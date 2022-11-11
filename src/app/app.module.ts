@@ -4,9 +4,8 @@ import { NgModule, } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 import { AboutComponent, WordMergerComponent } from './index'
-import { ApplicationHttpClient, applicationHttpClientCreator } from './common/services/commonhttp.interceptor2';
 
 @NgModule({
   declarations: [
@@ -18,18 +17,12 @@ import { ApplicationHttpClient, applicationHttpClientCreator } from './common/se
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
   ],
-  providers: [ 
-    //Provide the extended HttpClient
-    {
-      provide: ApplicationHttpClient,
-      useFactory: applicationHttpClientCreator,
-      deps: [HttpClient]
-    },
+  providers: [
   ],
   bootstrap: [AppComponent]
 })

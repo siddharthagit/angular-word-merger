@@ -5,10 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './word-merger.component.html'
 })
 export class WordMergerComponent implements OnInit {
-  word1: string ="";
-  word2: string ="";
-  word3:  string ="";
-  word4:  string ="";
+  word1: string;
+  word2: string;
+  word3: string;
+  word4: string;
   isFormError: boolean = false;
   allowedStringLn: number = 25;
   listOfGeneratedWords = Array<string>();
@@ -37,7 +37,7 @@ export class WordMergerComponent implements OnInit {
       this.listOfGeneratedWords.push(this.word3);
       this.listOfGeneratedWords.push(this.word4);
       resultArray = this.tryCombine(this.word1, this.word2);
-      let removeDuplicates = (names: any[]) => names.filter((v, i) => names.indexOf(v) === i)
+      let removeDuplicates = (names) => names.filter((v, i) => names.indexOf(v) === i)
       removeDuplicates(resultArray);
 
       //use word3
@@ -124,11 +124,10 @@ export class WordMergerComponent implements OnInit {
   }
 
   private removeDuplicates(data: Array<string>) {
-    let unique = new Map<string, boolean>();
-    ;
+    let unique = {};
     data.forEach(function (i) {
-      if (!unique.has(i)) {
-        unique.set(i, true) ;
+      if (!unique[i]) {
+        unique[i] = true;
       }
     });
 
