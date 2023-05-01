@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "@angular/service-worker": "~13.3.0",
-    "bootstrap": "^5.2.0",
+    "bootstrap": "^4.3.1",
     "bootstrap-slider": "^11.0.2",
     "font-awesome": "^4.7.0",
     "registry.npmjs.org": "^1.0.1",
